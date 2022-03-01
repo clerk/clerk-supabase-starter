@@ -1,18 +1,19 @@
-# Clerk and React starter
+# Clerk + Supabase Starter
 
-This repository shows how to use [Clerk](https://clerk.dev) with React.
+[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/clerkinc/clerk-supabase-starter) [![Clerk documentation](https://img.shields.io/badge/documentation-clerk-green.svg)](https://docs.clerk.dev) [![@ClerkDev on Twitter](https://img.shields.io/twitter/follow/ClerkDev?style=social)](https://twitter.com/intent/follow?screen_name=ClerkDev)
 
-You can find its live demo at [https://starter.react.clerk.app](https://starter.react.clerk.app).
+This example shows how to use [Clerk](https://clerk.dev?utm_source=github&utm_medium=starter_repos&utm_campaign=supabase_starter) with Supabase. The example React application features sign up, sign in, profile management, a request for a custom JWT token, and an authenticated database call.
 
-[![Open in VS Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/clerkinc/clerk-react-starter)
+## Running the starter
 
-## Running the starter locally
+To run the example locally you need to:
 
-1. Fork and clone this repository
-2. Install dependencies: `yarn install`
-3. Add your "Frontend API" (found on your Clerk dashboard, under the **Home** tab) to a file called `.env.local`: `echo "REACT_APP_CLERK_FRONTEND_API=YOUR_FRONTEND_API_URL" >> .env.local`
-4. Run the app: `yarn start`
+1. Sign up for a Clerk account at https://clerk.dev.
+2. Follow the [integration instructions](https://docs.clerk.dev/integrations/supabase) for Supabase.
+3. Set the required Clerk environment variables as shown in [the example env file](./.env.local.sample).
+4. `npm install` the required dependencies.
+5. `npm start` and you are good to go.
 
-## Need help?
+## Contact
 
-If you need any [assistance](https://clerk.dev/support), we're happy to help you out!
+If you need support or have anything you would like to ask, please reach out in our [Discord channel](https://discord.com/invite/b5rXHjAg7A). We'd love to chat!
