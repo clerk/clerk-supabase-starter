@@ -1,39 +1,146 @@
 .app {
-    color: white;
-    font-size: calc(10px + 2vmin);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-top: 100px;
+  display: flex;
+  flex-flow: column nowrap;
+  max-width: 550px;
+  height: 85vh;
+  margin: 0 auto;
+  padding-top: 2rem;
+  text-align: center;
 }
 
 .app h1 {
-    margin: 0;
+  margin: 0 0 16px;
 }
 
-.app img {
-    height: 40vmin;
-    pointer-events: none;
-    margin: 50px 0;
+.app p {
+  color: #808080;
+  margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .app img {
-        animation: App-logo-spin infinite 20s linear;
-    }
+.app > p {
+  font-size: 20px;
 }
 
-.app a {
-    color: #61dafb;
+.card {
+  margin: 2rem 0;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.card > a,
+.card > button {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+  width: 100%;
+  padding: 2em;
+  background: transparent;
+  border: 2px solid transparent;
+  border-radius: 0.5em;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.card > a {
+  grid-template-columns: 24px 2fr 24px;
+}
+
+.card > button {
+  grid-template-columns: 50px 1fr 42px;
+}
+
+.card > a:hover,
+.card > a:focus,
+.card > a:active,
+.card > button:hover,
+.card > button:focus,
+.card > button:active {
+  border-color: #f2f2f2;
+}
+
+.card-logo {
+  width: 48px;
+  height: 48px;
+}
+
+.card h3 {
+  margin: 0 0 4px;
+}
+
+.card .icon-arrow {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.card:hover .icon-arrow {
+  opacity: 1;
+}
+
+.card svg:not(.icon-arrow) {
+  margin-bottom: 2rem;
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 90%;
+  margin: 0 auto;
+  padding-top: 2rem;
+}
+
+.links > a {
+  color: #335bf1;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+
+.links > a:hover,
+.links > a:focus,
+.links > a:active {
+  position: relative;
+  border-bottom-color: #335bf1;
+}
+
+.links > a:hover::after,
+.links > a:focus::after,
+.links > a:active::after {
+  position: absolute;
+  right: -25px;
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' stroke='%23335bf1' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-external-link'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3'/%3E%3C/svg%3E");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.footer {
+  margin-top: auto;
+  padding: 1.5rem 0;
+}
+
+.footer p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer a {
+  padding: 0 0.5rem;
+  transition: transform 0.15s ease;
+}
+
+.footer a:hover,
+.footer a:focus,
+.footer a:active {
+  border-bottom: 0;
+  transform: translateY(-0.5rem);
+}
+
+.footer img {
+  max-height: 24px;
 }
