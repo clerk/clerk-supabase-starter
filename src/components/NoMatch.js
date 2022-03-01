@@ -1,15 +1,14 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
-function NoMatch() {
-    return (
-        <div>
-            <h2>Page not found - 404</h2>
-            <p>
-                <Link to="/">Go to the home page</Link>
-            </p>
-        </div>
-    )
-}
+const NoMatch = () => {
+  return (
+    <main className="app">
+      <h2>Page not found - 404</h2>
+      <p>
+        Return to the <Link to="/">homepage</Link>
+      </p>
+    </main>
+  );
+};
 
-export default NoMatch
+export default NoMatch;
