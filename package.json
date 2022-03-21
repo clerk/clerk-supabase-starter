@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
-        "@clerk/clerk-react": "^3.0.0-alpha.9",
+        "@clerk/clerk-react": "^3.0.1-alpha.1",
         "@supabase/supabase-js": "^1.30.7",
         "@testing-library/jest-dom": "^5.16.2",
         "@testing-library/react": "^12.1.3",
