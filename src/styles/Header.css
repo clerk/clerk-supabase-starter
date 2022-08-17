@@ -10,16 +10,14 @@ header {
 }
 
 header > a,
-nav button {
+nav a {
   color: #606060;
   font-weight: 600;
-  border: 0;
-  border-bottom: 2px solid transparent;
-  cursor: pointer;
 }
 
 header > a {
   font-size: 18px;
+  border-bottom: 2px solid transparent;
 }
 
 nav > ul {
@@ -29,7 +27,7 @@ nav > ul {
   list-style: none;
 }
 
-nav button {
+nav a {
   background: none;
   border-radius: 8px;
   padding: 10px 20px;
@@ -37,8 +35,9 @@ nav button {
   text-transform: uppercase;
 }
 
-nav button:hover,
-nav button:focus,
-nav button:active {
+nav a:hover,
+nav a:focus,
+nav a:active {
   background: #fff;
+  border: 0;
 }

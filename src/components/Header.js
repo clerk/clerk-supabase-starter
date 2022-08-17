@@ -1,9 +1,4 @@
-import {
-  SignedIn,
-  SignedOut,
-  SignInButton,
-  UserButton
-} from '@clerk/clerk-react';
+import { SignedIn, SignedOut, UserButton } from '@clerk/clerk-react';
 import { Link } from 'react-router-dom';
 import '../styles/Header.css';
 
@@ -15,7 +10,7 @@ const Header = () => {
         <ul>
           <li>
             <SignedOut>
-              <SignInButton mode="modal" />
+              <Link to="/sign-in">Sign in</Link>
             </SignedOut>
             <SignedIn>
               <UserButton afterSignOutAllUrl={window.location.href} />

@@ -4,9 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ClerkProvider } from '@clerk/clerk-react';
 
 import App from './App';
-import Layout from './components/Layout';
-import NoMatch from './components/NoMatch';
-import SignUp from './components/SignUp';
+import { Layout, NoMatch, SignIn, SignUp } from './components';
 
 import './styles/index.css';
 
@@ -20,6 +18,7 @@ ReactDOM.render(
           <Route path="/" element={<Layout />}>
             <Route index element={<App />} />
             <Route path="/sign-up" element={<SignUp />} />
+            <Route path="/sign-in" element={<SignIn />} />
             <Route path="*" element={<NoMatch />} />
           </Route>
         </Routes>
