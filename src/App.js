@@ -1,10 +1,22 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { SignedIn, SignedOut, useAuth } from '@clerk/clerk-react';
-import { supabase } from './lib/supabaseClient';
+import { createClient } from '@supabase/supabase-js';
 
 import './styles/App.css';
 
+const supabaseClient = async supabaseAccessToken => {
+  const supabase = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL,
+    process.env.NEXT_PUBLIC_SUPABASE_KEY,
+    {
+      global: { headers: { Authorization: `Bearer ${supabaseAccessToken}` } }
+    }
+  );
+  // set Supabase JWT on the client object,
+  // so it is sent up with all Supabase requests
+  return supabase;
+};
 const Example = () => {
   const { getToken } = useAuth();
   const [response, setResponse] = useState('// Click button to execute code');
@@ -16,7 +28,9 @@ const Example = () => {
       const token = await getToken({ template: 'supabase' });
       setResponse(token);
     } catch (e) {
-      setResponse('// There was an error with the request. Please contact support@clerk.dev');
+      setResponse(
+        '// There was an error with the request. Please contact support@clerk.dev'
+      );
     }
   };
 
@@ -25,9 +39,9 @@ const Example = () => {
 
     try {
       // TODO: Update with your JWT template name
-      const token = await getToken({ template: 'supabase' });
+      const supabaseAccessToken = await getToken({ template: 'supabase' });
 
-      supabase.auth.setAuth(token);
+      const supabase = await supabaseClient(supabaseAccessToken);
 
       const { data } = await supabase.from('your_table').select();
       const body = data ? JSON.stringify(data, null, '  ') : 'No data returned';
